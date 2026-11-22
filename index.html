@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Dominadas · ¿Cuántas haces tú?</title>
+  <meta name="description" content="Toca el balón para que no caiga. Charlyn Corral hizo 8,671 dominadas a los 13 años. ¿Cuántas haces tú?">
+  <meta name="theme-color" content="#160a96">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="juego">
+    <canvas id="cancha" aria-label="Cancha del juego de dominadas"></canvas>
+
+    <!-- Marcador -->
+    <div class="hud" id="hud" hidden>
+      <div class="contador" id="contador" aria-live="polite">0</div>
+      <div class="record">Récord: <b id="record-hud">0</b></div>
+      <div class="aviso" id="aviso"></div>
+    </div>
+
+    <!-- Pantalla de inicio -->
+    <section class="pantalla" id="inicio">
+      <div class="tarjeta">
+        <p class="kicker">Reto</p>
+        <h1>Dominadas</h1>
+        <p class="sub">Toca el balón para que no caiga. Si le pegas de un lado, se va para el otro.</p>
+        <div class="charlyn">
+          <span class="num">8,671</span>
+          <span>dominadas hizo <b>Charlyn Corral</b> a los 13 años. Récord Guinness.<br>¿Cuántas haces tú?</span>
+        </div>
+        <button class="btn" id="btn-jugar" type="button">Jugar</button>
+        <p class="record-inicio" id="record-inicio" hidden>Tu récord: <b id="record-inicio-num">0</b></p>
+      </div>
+    </section>
+
+    <!-- Pantalla de fin -->
+    <section class="pantalla" id="fin" hidden>
+      <div class="tarjeta">
+        <p class="kicker" id="fin-titulo">Se te cayó</p>
+        <div class="resultado"><span id="resultado">0</span><small>dominadas</small></div>
+        <p class="nuevo-record" id="nuevo-record" hidden>¡Nuevo récord! 🔥</p>
+        <div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+        <p class="comparacion" id="comparacion"></p>
+        <div class="acciones">
+          <button class="btn" id="btn-otra" type="button">Otra vez</button>
+          <button class="btn sec" id="btn-compartir" type="button">Compartir</button>
+        </div>
+        <p class="copiado" id="copiado" hidden>Texto copiado. ¡Pégalo donde quieras!</p>
+      </div>
+    </section>
+
+    <footer class="firma">@elmaurienlared</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
